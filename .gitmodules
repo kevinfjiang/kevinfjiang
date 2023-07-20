@@ -1,0 +1,13 @@
+[submodule "vercel_spotify"]
+    path = vercel_spotify
+    url = https://github.com/kevinfjiang/vercel_spotify.git
+    branch = main
+[submodule "kevinfjiang.github.io"]
+    path = kevinfjiang.github.io
+    url = https://github.com/kevinfjiang/kevinfjiang.github.io.git
+    branch = main
+[submodule "readme_info"]
+    path = readme_info
+    url = git@github.com:kevinfjiang/readme_info.git
+    branch = main
+
