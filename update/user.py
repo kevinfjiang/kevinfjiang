@@ -49,8 +49,7 @@ def update_github_user(mdReadMe):
     for key in ["email", "linkedin_username", "curriculum"]:
         mdReadMe.write("\n")
         if key == "curriculum":
-            resume_url = os.path.join("/docs/", find_recent_resume(SUBMOD))
-            info = os.path.join(f"https://{SUBMOD}/", resume_url)
+            info = os.path.join(f"https://{SUBMOD}/docs/", find_recent_resume(SUBMOD))
         else:
             info = user_info[key]
         mdReadMe.write(button_templates[key].format(info), wrap_width=0)

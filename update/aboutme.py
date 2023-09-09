@@ -19,7 +19,7 @@ def update_github_aboutme(mdReadMe):
     mdReadMe.new_line("<details><summary>aboutme.py</summary>")
     mdReadMe.new_line("<blockquote>\n")
     mdReadMe.new_line("```python")
-    mdReadMe.new_line("class KevinFJiang(ReadMe, GitHub):")
+    mdReadMe.new_line("class KevinFJiang:")
     mdReadMe.new_line("\tdef __init__(self):\n")
 
     for tag, val in about_info.items():
@@ -45,9 +45,6 @@ def update_github_aboutme(mdReadMe):
     mdReadMe.new_line("\t\treturn self.render(request, *args, **kwargs)\n")
     mdReadMe.new_line("```")
     mdReadMe.new_line('<p align = "middle">')
-
-    for button in ALT_BADGES:
-        mdReadMe.new_line(button)
 
     mdReadMe.new_line("</blockquote></details>")
     print("Done updating aboutme section GitHub")

@@ -31,9 +31,9 @@ def update_website_informal():
 
     lang = about_info["software"]["Languages"]
     inter = about_info["interests"]
-    mdindex.new_line(f"\nMy top languages are {', '.join(lang[:3])}, and {lang[3]}.")
+    mdindex.new_line(f"\nMy top languages are {', '.join(lang[:-1])}, and {lang[-1]}.")
     mdindex.new_line(
-        f"My current interests are {', '.join(inter[:3])}, and {inter[3]}."
+        f"My current interests are {', '.join(inter[:-1])}, and {inter[-1]}."
     )
     mdindex.new_line(inform.get("aboutme_bio"))
     mdindex.create_md_file()

@@ -6,25 +6,23 @@
 <p align="center">
 <a href=mailto:kevinfjiang@yahoo.com" target="blank"><img align="center" src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
 <a href=https://www.linkedin.com/in/kevinfjiang target="blank"><img align="center" src="https://img.shields.io/badge/-LinkedIn-039BE5?style=for-the-badge&logo=Linkedin&logoColor=white"/></a>
-<a href="/docs/Resume_KFJ_23F.pdf" align="center" target="blank"><img align="center" src="https://img.shields.io/badge/resume-built-green?style=for-the-badge" /></a></p>  
-I'm a student at Columbia University majoring in Data Science (CS and stats). I have with previous experience in non-profits and NGOs, research, startups, and Faang. Looking for internships in SWE/trading.  
+<a href="https://kevinfjiang.github.io/docs/Resume_KFJ_23F.pdf" align="center" target="blank"><img align="center" src="https://img.shields.io/badge/resume-built-green?style=for-the-badge" /></a></p>  
+I'm a student at Columbia University majoring in Mathematics-Statistics. I have with previous experience in non-profits and research, startups, and Faang. Looking for internships in SWE/trading.  
 <details><summary>aboutme.py</summary>  
 <blockquote>
   
 ```python  
-class KevinFJiang(ReadMe, GitHub):  
+class KevinFJiang:  
 	def __init__(self):
 		self.username = 'kevinfjiang'
 		self.name = 'Kevin Jiang'
 
 		self.software = {
-			'Languages': ['Python', 'C++', 'Rust', 'Golang'],
-			'DB/ETL': ['PostgreSQL', 'MySQL', 'Athena', 'DynamoDB', 'Redis'],
-			'DS/ML': ['PyTorch', 'scikit-learn', 'Gensim', 'NumPy', 'SciPy', 'Pandas'],
-			'DevOps': ['AWS', 'Terraform', 'Docker', 'Git', 'GitHub'],
+			'Languages': ['Python', 'C++', 'Rust', 'Golang', 'SQL', 'AWS', 'Git'],
+			'Research': ['PyTorch', 'TensorFlow', 'scikit-learn', 'NumPy', 'SciPy', 'Pandas'],
 		}
 		self.interests = [
-			'Algo-Trading', 'F1 Racing',
+			'F1 Racing', 'cooking',
 			'coffee', 'sushi',
 		]
 		self.bio = 'I love puzzles, coffee, cooking, and F1 racing. I also love minimalist designs, new site tbd'
@@ -44,8 +42,6 @@ class KevinFJiang(ReadMe, GitHub):
   
 ```  
 <p align = "middle">  
-<a href="https://github.com/kevinfjiang?tab=repositories" target="blank"><img align="center" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" /></a>  
-<a href=https://open.spotify.com/user/kevin_j16 target="blank"><img align="center" src="https://img.shields.io/badge/Spotify-1ED760?&style=for-the-badge&logo=spotify&logoColor=white" /></a>  
 </blockquote></details>  
 </details>
   
@@ -95,6 +91,6 @@ AUTHOR: Kevin F. Jiang
   
 CREDITS: [Kevin F. Jiang](github.com/kevinfjiang). [Gabriel Alcaras](https://gaalcaras.com/en/), [Maarten Grootendors](https://github.com/MaartenGr), and [Nate Moore](https://github.com/natemoo-re).
   
-CREATED: Feb 13, 2021
+CREATED: Jul 20, 2023
   
-LAST UPDATED: Jul 20, 2023
+LAST UPDATED: Sep 9, 2023
