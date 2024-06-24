@@ -1,4 +1,6 @@
-I was a student at Columbia University majoring in Mathematics-Statistics. My background is in SWE and ML research. Lately, I'm interested in data-centric AI, functional programming (Haskell), and Sushi.  
+![image](hello_world.png)<p align="center">[![github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/kevinfjiang) [![linkedin](https://img.shields.io/badge/-LinkedIn-039BE5?style=for-the-badge&logo=Linkedin&logoColor=white)](https://www.linkedin.com/in/kevinfjiang) [![spotify](https://img.shields.io/badge/Spotify-1ED760?&style=for-the-badge&logo=spotify&logoColor=white)](https://open.spotify.com/user/kevin_j16)</p>  
+I'm currently a SWE for Google. Previously, I was a Math-Stats student at Columbia University. Lately, I'm interested in frontier evals.
+
 </details>
   
 <details><summary>projectupdate.db</summary>
@@ -39,4 +41,5 @@ CREDITS: [Kevin F. Jiang](github.com/kevinfjiang). [Gabriel Alcaras](https://gaa
   
 CREATED: Jul 20, 2023
   
-LAST UPDATED: Apr 30, 2024
+LAST UPDATED: Jun 23, 2024
+
