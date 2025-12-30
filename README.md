@@ -1,20 +1,14 @@
-
-
-
-  
-![image](hello_world.png)<p align="center">[![github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](![github](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)) [![linkedin](https://img.shields.io/badge/-LinkedIn-039BE5?style=for-the-badge&logo=Linkedin&logoColor=white)](![linkedin](https://img.shields.io/badge/-LinkedIn-039BE5?style=for-the-badge&logo=Linkedin&logoColor=white)) [![spotify](https://img.shields.io/badge/Spotify-1ED760?&style=for-the-badge&logo=spotify&logoColor=white)](![spotify](https://img.shields.io/badge/Spotify-1ED760?&style=for-the-badge&logo=spotify&logoColor=white))</p>  
 I was a student at Columbia University majoring in Mathematics-Statistics. My background is in SWE and ML research. Lately, I'm interested in data-centric AI, functional programming (Haskell), and Sushi.  
 </details>
   
 <details><summary>projectupdate.db</summary>
 
-|Project*|Description|Time|Technology|
+|Project|Description|Time|Technology|
 | :---: | :---: | :---: | :---: |
 |[LAESA Haskell implementation](https://github.com/kevinfjiang/hello-neighbor)|LAESA algorithm implemented in Haskell for COMS W4995 final project|December 2023|Haskell|
 |[Vercel spotify](https://github.com/kevinfjiang/vercel_spotify)|Vercel serverless application to display top songs on spotify.|July 2023|NextJS, ReactJS, Vercel|
 |[Coverage Badge](https://github.com/kevinfjiang/coverage-badge)|Quick github action for a code coverage badge|June 2023|GitHub Actions|
 |[OpenDataVal](https://github.com/opendataval/opendataval)|Library and benchmarks for the field of data valuation (NeurIPS 2023)|March 2023|PyTorch|
-|[FuncNotify](https://github.com/kevinfjiang/FuncNotify)|Simple decorator notifier, used to notify myself when training models that took forever.|August 2021|Python, Twilio, Slack-Api etc.|
   
 </details>  
 <details><summary>music.db</summary>
