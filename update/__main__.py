@@ -1,67 +1,45 @@
-import io
+from pathlib import Path
+from typing import Annotated
+from typer import Option, Typer
 
-import googleapiclient
-from google.oauth2.service_account import Credentials
-from googleapiclient.discovery import build
-from mdutils import MdUtils
-from typer import Typer, echo
+from update.config import PATH, ROOT_DIR, SUBMOD
+from update.models import ReadmeData
+from update.views import GithubView, WebsiteView
 
-from update.config import SUBMOD
-from update.music import update_github_music
-from update.news import update_website_news
-from update.projects import (update_github_projects, update_website_projects,
-                             update_website_services)
-from update.user import (update_github_credits, update_github_informal,
-                         update_github_user, update_website_user, user_info)
-
-app = Typer()
-
-
-@app.callback()
-def download_resume(update: bool = False):
-    if not update:
-        return
-    SCOPES = ["https://www.googleapis.com/auth/drive.readonly"]
-
-    file_id, file_path = user_info["curriculum"]["file_id"], SUBMOD / "assets"
-    creds = Credentials.from_service_account_file("secrets.json", scopes=SCOPES)
-    service = build("drive", "v3", credentials=creds)
-
-    request = service.files().export_media(fileId=file_id, mimeType="application/pdf")
-    fl = service.files().get(fileId=file_id).execute()
-    fh = io.FileIO(file_path / fl["name"], "wb")
-
-    downloader = googleapiclient.http.MediaIoBaseDownload(fh, request)
-    done = False
-    while not done:
-        status, done = downloader.next_chunk()
-        echo("Download %d%%." % int(status.progress() * 100))
-    return
+app = Typer(help="CLI tool to update GitHub README and website content.")
 
 
 @app.command()
-def github():
-    # Generate markdowns
-    mdReadMe = MdUtils(file_name="README")
-    mdReadMe.new_line(mdReadMe.new_inline_image(text="image", path="hello_world.png"))
-
-    update_github_user(mdReadMe)
-    update_github_projects(mdReadMe)
-    update_github_music(mdReadMe)
-    update_github_informal(mdReadMe)
-    update_github_credits(mdReadMe)
-
-    echo("README.md created!")
-    mdReadMe.create_md_file()
+def github(
+    data_dir: Annotated[
+        Path, Option("--data-dir", "-d", help="Path to data directory.")
+    ] = PATH,
+    output_dir: Annotated[
+        Path, Option("--output-dir", "-o", help="Output directory for README file.")
+    ] = ROOT_DIR,
+    output_file: Annotated[
+        str, Option("--output-file", "-f", help="Output file name (e.g. README).")
+    ] = "README",
+) -> None:
+    """Generate GitHub README.md file."""
+    data = ReadmeData.from_dir(data_dir)
+    view = GithubView(data, file_name=output_file, output_dir=output_dir)
+    view.generate()
 
 
 @app.command()
-def website():
-    update_website_user()
-    update_website_projects()
-    update_website_services()
-    update_website_news()
-    echo("Website created!")
+def website(
+    data_dir: Annotated[
+        Path, Option("--data-dir", "-d", help="Path to data directory.")
+    ] = PATH,
+    output_dir: Annotated[
+        Path, Option("--output-dir", "-o", "--submodule", help="Output directory for website.")
+    ] = SUBMOD,
+) -> None:
+    """Generate website markdown files and configurations."""
+    data = ReadmeData.from_dir(data_dir)
+    view = WebsiteView(data, output_dir=output_dir)
+    view.generate()
 
 
 if __name__ == "__main__":

@@ -4,70 +4,51 @@ build-backend = "hatchling.build"
 
 [project]
 name = "kevinfjiang"
+version = "0.1.0"
 authors = [
     {name = "Kevin Jiang", email = "kevinfjiang@yahoo.com"},
 ]
-description = "Personal github readme"
+description = "Personal github readme and website generator"
 readme = "README.md"
-requires-python = ">=3.10.4"
+requires-python = ">=3.10"
 license = {text = "MIT"}
 dependencies = [
-    "PyYAML~=6.0",
-    "typer~=0.9",
-    "mdutils~=1.6.0",
-    "google-api-python-client~=2.86.0",
+    "PyYAML>=6.0",
+    "typer>=0.9.0",
+    "mdutils>=1.6.0",
+    "requests>=2.31.0",
+    "python-dateutil>=2.8.2",
+    "pytest>=7.0.0",
 ]
-dynamic = ["version"]
+
 
 [project.urls]
 "Source code" = "https://github.com/kevinfjiang/kevinfjiang"
 
 [project.scripts]
-opendataval = "update.__main__:cli"
+update = "update.__main__:app"
 
-
-[tool.hatch.version]
-path = "update/__init__.py"
-
-skip-excluded-dirs = true
+[tool.hatch.build.targets.wheel]
+packages = ["update"]
 
 [tool.black]
 line-length = 88
-include = '\.pyi?$'
-exclude = '''
-/(
-    \.git
-  | \.hg
-  | \.mypy_cache
-  | \.tox
-  | \.venv
-  | _build
-  | buck-out
-  | build
-  | dist
-)/
-'''
+
 [tool.ruff]
 select = ["E", "F", "I", "C90", "RUF"]
 
 [tool.ruff.per-file-ignores]
 "__init__.py" = ["F401", "F403", "E501"]
 
-[tool.ruff.pydocstyle]
-convention = "numpy"
-
 [tool.ruff.isort]
 known-first-party = ["update"]
 known-third-party = [
-    "numpy",
     "mdutils",
-    "google",
+    "requests",
     "typer",
+    "yaml",
 ]
 
-[tool.coverage.run]
-source = ["opendataval"]
-omit = ["opendataval/model/*", "opendataval/dataloader/datasets/*"]
-
 [tool.pytest.ini_options]
-testpaths = ["test"]
+testpaths = ["tests"]
+pythonpath = ["."]
